@@ -27,7 +27,7 @@ async def _human_time_duration(seconds):
 async def restart(client, m: Message):
     await m.delete()
     loli = await m.reply("•انتضر عزيزي \n سيتم تحديث سورس يرجا الانتضار قليلا")
-    sleep(3)
+    sleep(9)
     await loli.edit("**✅ تم تحديث سورس ميوزك توب @IIIT5")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
@@ -58,7 +58,7 @@ async def help(client, m: Message):
 ———————×———————
 المطور 🇮🇶 : @IIIT5
 """
-    await m.reply(TOPAC)
+    await message.reply_photo("https://telegra.ph/file/8dd7aa6ad40d9262c89d1.jpg", caption=Topac)
 @Client.on_message(filters.command(["فحص"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
