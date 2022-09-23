@@ -58,7 +58,7 @@ async def help(client, m: Message):
 ———————×———————
 المطور 🇮🇶 : @IIIT5
 """
-    await message.reply_photo("https://telegra.ph/file/8dd7aa6ad40d9262c89d1.jpg", caption=Topac)
+    await message.reply_photo("https://telegra.ph/file/8dd7aa6ad40d9262c89d1.jpg", caption=TOPAC)
 @Client.on_message(filters.command(["فحص"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
