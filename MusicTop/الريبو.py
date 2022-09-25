@@ -10,7 +10,7 @@ import aiohttp
 from pyrogram import Client, filters
 from config import HNDLR
 from MusicTop.helpers.get_file_id import get_file_id
-from MusicTol.helpers.merrors import capture_err
+from MusicTop.helpers.merrors import capture_err
 from MusicTop.helpers.decorators import authorized_users_only
 
 START_TIME = datetime.utcnow()
