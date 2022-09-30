@@ -1,12 +1,13 @@
 import os
 import sys
+impprt random
 from datetime import datetime
 from time import time
 from time import sleep
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import HNDLR, SUDO_USERS
-import aiohttp
+import asyncio
 from pyrogram import Client, filters
 from config import HNDLR
 from MusicTop.helpers.get_file_id import get_file_id
@@ -53,12 +54,14 @@ async def help(client, m: Message):
 ● | لتحميل صوتية أرسل ⇦ [ {HNDLR}تحميل + اسم الاغنية او الرابط ]
 ● | لتحميل فيديو  ⇦  [ {HNDLR}تحميل_فيديو + اسم الاغنية او الرابط ]
 ـ———————×————————
+● | لعرض الايدي ⇦ [ `{HNDLR}ايدي` , `{HNDLR}ا` ]
 ● | لأعاده تشغيل السورس أرسل ⇦  [ {HNDLR}تحديث` ]
 ـ———————×————————
 المطور 🇮🇶 : @IIIT5
 """
-    await m.reply_photo("https://telegra.ph/file/8dd7aa6ad40d9262c89d1.jpg", caption=TOPAC)
-@Client.on_message(filters.command(["id"], prefixes=f"{HNDLR}"))
+    r = random.randint(64, 94)
+    await m.reply_photo(f"https://t.me/QWERTYU8I/{r}", caption=TOPAC)
+@Client.on_message(filters.command(["ايدي","ا"], prefixes=f"{HNDLR}"))
 async def showid(_, message: Message):
     chat_type = message.chat.type
 
@@ -91,7 +94,7 @@ async def github(_, message):
         await message.reply_text("/git Username")
         return
     username = message.text.split(None, 1)[1]
-    URL = f"https://api.github.com/users/{username}"
+    URL = "https://github.com/MUSIC-TELEGRAM1/MUSIC-TELEGRAM1"
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
@@ -127,8 +130,18 @@ async def github(_, message):
 @Client.on_message(filters.command(["فحص"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
+    topac1 = f"""
+<b>👋  اهلا {m.from_user.mention}!
+•> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
+"""
+    r = random.randint(1,2314)
+    await client.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
+@Client.on_message(filters.command(["ه"], prefixes=f"{HNDLR}"))
+async def repo(client, m: Message):
+    await m.delete()
     REPO = f"""
 <b>👋  اهلا {m.from_user.mention}!
 •> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
 """
+    
     await m.reply(REPO, disable_web_page_preview=True)
