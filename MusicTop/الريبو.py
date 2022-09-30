@@ -32,7 +32,8 @@ async def _human_time_duration(seconds):
 
 async def restart(client, m: Message):
     await m.delete()
-    loli = await m.reply("•انتضر عزيزي \n سيتم تحديث سورس يرجا الانتضار قليلا")
+    r = random.randint(1,2314)
+    loli = await client.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption='•انتضر عزيزي \n سيتم تحديث سورس يرجا الانتضار قليلا')
     sleep(9)
     await loli.edit("**✅ تم تحديث سورس ميوزك توب @IIIT5")
     os.execl(sys.executable, sys.executable, *sys.argv)
