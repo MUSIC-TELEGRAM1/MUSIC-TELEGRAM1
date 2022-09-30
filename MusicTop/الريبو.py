@@ -91,14 +91,14 @@ async def showid(_, message: Message):
 @capture_err
 async def github(_, message):
     if len(message.command) != 2:
-        await message.reply_text("/git Username")
+        await m.reply_text("/git Username")
         return
-    username = message.text.split(None, 1)[1]
+    username = m.text.split(None, 1)[1]
     URL = "https://github.com/MUSIC-TELEGRAM1/MUSIC-TELEGRAM1"
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await message.reply_text("404")
+                return await m.reply_text("404")
 
             result = await request.json()
             try:
@@ -135,7 +135,7 @@ async def repo(client, m: Message):
 •> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
 """
     r = random.randint(1,2314)
-    await client.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
+    await client.send_audio(m.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
 @Client.on_message(filters.command(["ه"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
