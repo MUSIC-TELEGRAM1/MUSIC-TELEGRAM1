@@ -33,7 +33,7 @@ async def _human_time_duration(seconds):
 async def restart(client, m: Message):
     await m.delete()
     r = random.randint(1,2314)
-    loli = await client.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption='•انتضر عزيزي \n سيتم تحديث سورس يرجا الانتضار قليلا')
+    loli = await client.send_audio(m.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption='•انتضر عزيزي \n سيتم تحديث سورس يرجا الانتضار قليلا')
     sleep(9)
     await loli.edit("**✅ تم تحديث سورس ميوزك توب @IIIT5")
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -88,47 +88,7 @@ async def showid(_, message: Message):
                 f"<code>{file_info.file_id}</code>\n"
             )
         await message.reply_text(_id)
-@Client.on_message(filters.command(["git", "github"], prefixes=f"{HNDLR}"))
-@capture_err
-async def github(_, message):
-    if len(message.command) != 2:
-        await m.reply_text("/git Username")
-        return
-    username = m.text.split(None, 1)[1]
-    URL = "https://github.com/MUSIC-TELEGRAM1/MUSIC-TELEGRAM1"
-    async with aiohttp.ClientSession() as session:
-        async with session.get(URL) as request:
-            if request.status == 404:
-                return await m.reply_text("404")
-
-            result = await request.json()
-            try:
-                url = result["html_url"]
-                name = result["name"]
-                company = result["company"]
-                bio = result["bio"]
-                created_at = result["created_at"]
-                avatar_url = result["avatar_url"]
-                blog = result["blog"]
-                location = result["location"]
-                repositories = result["public_repos"]
-                followers = result["followers"]
-                following = result["following"]
-                caption = f"""**Info Of {name}**
-**Username:** `{username}`
-**Bio:** `{bio}`
-**Profile Link:** [Here]({url})
-**Company:** `{company}`
-**Created On:** `{created_at}`
-**Repositories:** `{repositories}`
-**Blog:** `{blog}`
-**Location:** `{location}`
-**Followers:** `{followers}`
-**Following:** `{following}`"""
-            except Exception as e:
-                print(str(e))
-    await message.reply_photo(photo=avatar_url, caption=caption)
-@Client.on_message(filters.command(["فحص"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["فف"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
     topac1 = f"""
@@ -136,7 +96,7 @@ async def repo(client, m: Message):
 •> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
 """
     r = random.randint(1,2314)
-    await Client.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
+    await client.send_audio(m.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
 @Client.on_message(filters.command(["ف"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
