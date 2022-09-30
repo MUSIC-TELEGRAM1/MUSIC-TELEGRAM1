@@ -135,8 +135,8 @@ async def repo(client, m: Message):
 •> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
 """
     r = random.randint(1,2314)
-    await m.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
-@Client.on_message(filters.command(["ه"], prefixes=f"{HNDLR}"))
+    await Client.send_audio(message.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
+@Client.on_message(filters.command(["ف"], prefixes=f"{HNDLR}"))
 async def repo(client, m: Message):
     await m.delete()
     REPO = f"""
