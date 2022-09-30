@@ -1,6 +1,6 @@
 import os
 import sys
-impprt random
+import random
 from datetime import datetime
 from time import time
 from time import sleep
