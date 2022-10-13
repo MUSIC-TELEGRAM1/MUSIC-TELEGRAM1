@@ -58,7 +58,6 @@ async def help(client, m: Message):
 ● | لعرض الايدي ⇦ [ `{HNDLR}ايدي` , `{HNDLR}ا` ]
 ● | لأعاده تشغيل السورس أرسل ⇦  [ {HNDLR}تحديث` ]
 ـ———————×————————
-المطور 🇮🇶 : @IIIT5
 """
     r = random.randint(64, 94)
     await m.reply_photo(f"https://t.me/QWERTYU8I/{r}", caption=TOPAC)
@@ -93,7 +92,7 @@ async def repo(client, m: Message):
     await m.delete()
     topac1 = f"""
 <b>👋  اهلا {m.from_user.mention}!
-•> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
+•> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس 
 """
     r = random.randint(1,2314)
     await client.send_audio(m.chat.id, audio=(f"https://t.me/AC2AA/{r}"), caption=topac1)
@@ -102,7 +101,7 @@ async def repo(client, m: Message):
     await m.delete()
     REPO = f"""
 <b>👋  اهلا {m.from_user.mention}!
-•> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس \n المطور @iiit5
+•> سورس شغال الان \n ارسل `{HNDLR}اوامري` \n لتعرف اوامر السورس 
 """
     
     await m.reply(REPO, disable_web_page_preview=True)
